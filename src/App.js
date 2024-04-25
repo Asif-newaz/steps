@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./index.css";
 
 const messages = [
@@ -7,18 +8,19 @@ const messages = [
 ];
 
 function App() {
-  const step = 2;
+  const [step, setStep] = useState(1);
+  console.log(step);
 
   const handlePrevious = () => {
-    alert("This is previous button!");
+    step > 1 && setStep(step - 1);
   };
 
   const handleNext = () => {
-    alert("This is next button!");
+    step < 3 && setStep(step + 1);
   };
 
   return (
-    <div className="steps"> 
+    <div className="steps">
       <div className="numbers">
         <div className={step >= 1 ? "active" : ""}>1</div>
         <div className={step >= 2 ? "active" : ""}>2</div>
