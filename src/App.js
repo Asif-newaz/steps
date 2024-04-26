@@ -9,14 +9,15 @@ const messages = [
 
 function App() {
   const [step, setStep] = useState(1);
-  console.log(step);
+  const [test, setTest] = useState({ name: "Asif" });
 
-  const handlePrevious = () => {
+  const handlePrevious = () => { 
     step > 1 && setStep(step - 1);
   };
 
   const handleNext = () => {
     step < 3 && setStep(step + 1);
+    setTest({name: "Messi"});
   };
 
   return (
@@ -28,6 +29,7 @@ function App() {
       </div>
       <p className="message">
         Step {step}: {messages[step - 1]}
+        {test.name}
       </p>
       <div className="buttons">
         <button
