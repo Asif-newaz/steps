@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./index.css";
+import Typography from "./Typography";
 
 const messages = [
   "Learn React ⚛️",
@@ -14,22 +15,19 @@ function App() {
   // const [test, setTest] = useState({ name: "Asif" });
 
   const handlePrevious = () => {
-    step > 1 && setStep(step - 1);
+    if (step > 1) setStep((s) => s - 1);
   };
 
   const handleNext = () => {
-    step < 3 && setStep(step + 1);
-    // setTest({ name: "Messi" });
-  };
-
-  const toggleHandler = () => {
-    setIsOpen(() => setIsOpen(!isOpen));
-    console.log(isOpen);
+    if (step < 3) {
+      setStep((s) => s + 1);
+      setStep((s) => s + 1);
+    }
   };
 
   return (
     <>
-      <button className="close" onClick={toggleHandler}>
+      <button className="close" onClick={()  => setIsOpen((is) => !is)}>
         &times;
       </button>
       {isOpen && (
@@ -42,6 +40,7 @@ function App() {
           <p className="message">
             Step {step}: {messages[step - 1]}
           </p>
+          <Typography title="Hello world!" />
           <div className="buttons">
             <button
               style={{ backgroundColor: "#7950f2", color: "#fff" }}
