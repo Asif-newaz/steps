@@ -21,13 +21,12 @@ function App() {
   const handleNext = () => {
     if (step < 3) {
       setStep((s) => s + 1);
-      setStep((s) => s + 1);
     }
   };
 
   return (
     <>
-      <button className="close" onClick={()  => setIsOpen((is) => !is)}>
+      <button className="close" onClick={() => setIsOpen((is) => !is)}>
         &times;
       </button>
       {isOpen && (
