@@ -1,10 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function Home() {
   const [data, setData] = useState([]);
-  const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {

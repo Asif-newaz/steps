@@ -57,7 +57,8 @@ function Create() {
               onChange={(e) => setValues({ ...values, phone: e.target.value })}
             />
           </div>
-          <button className="btn btn-success">Submit</button>
+          <button className="btn btn-success" type="submit">Submit</button>
+          <button className="btn btn-success" onClick={()=> {console.log("cancled!")}}>cancel</button>
           <Link to="/" className="btn btn-primary ms-3">
             Back
           </Link>
