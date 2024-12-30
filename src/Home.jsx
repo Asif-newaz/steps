@@ -18,10 +18,10 @@ function Home() {
     if (confirm) {
       axios
         .delete("http://localhost:3001/users/" + id)
-        .then((res) => {
-          location.reload();
-        })
-        .catch((err) => console.log(err));
+        // .then((res) => {
+        //   location.reload();
+        // })
+        // .catch((err) => console.log(err));
     }
   };
 
@@ -65,7 +65,7 @@ function Home() {
                     Edit
                   </Link>
                   <button
-                    onClick={(e) => handleDelete(d.id)}
+                    onClick={() => handleDelete(d.id)}
                     className="btn btn-sm btn-danger"
                   >
                     Delete

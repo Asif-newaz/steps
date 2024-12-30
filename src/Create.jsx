@@ -16,7 +16,6 @@ function Create() {
     axios
       .post("http://localhost:3001/users", values)
       .then((res) => {
-        // console.log(res);
         navigate("/");
       })
       .catch((err) => console.log(err));
@@ -57,8 +56,9 @@ function Create() {
               onChange={(e) => setValues({ ...values, phone: e.target.value })}
             />
           </div>
-          <button className="btn btn-success" type="submit">Submit</button>
-          <button className="btn btn-success" onClick={()=> {console.log("cancled!")}}>cancel</button>
+          <button className="btn btn-success" type="submit">
+            Submit
+          </button>
           <Link to="/" className="btn btn-primary ms-3">
             Back
           </Link>
